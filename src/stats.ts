@@ -178,13 +178,13 @@ export interface CachesStats {
  * within the specified CDN or Delivery Service.
  */
 export interface Health {
-	cacheGroups: Array<{
-		name: string;
-		offline: number;
-		online: number;
-	}>;
-	totalOffline: number;
-	totalOnline: number;
+	cacheGroups: readonly {
+		readonly name: string;
+		readonly offline: number;
+		readonly online: number;
+	}[] | null;
+	readonly totalOffline: number;
+	readonly totalOnline: number;
 }
 
 /**
