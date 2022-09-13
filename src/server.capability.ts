@@ -95,7 +95,7 @@ export type DeliveryServiceRequiredCapability = RequestDeliveryServiceRequiredCa
  */
 export interface RequestServerServerCapability {
 	serverCapability: string;
-	serverID: number;
+	serverId: number;
 }
 
 /**
