@@ -56,19 +56,18 @@ export interface DeliveryServiceSSLKeyUpload {
  * for a Delivery Service.
  */
 export interface DeliveryServiceSSLKeyGenerationRequest {
-	businessUnit?: string | null;
+	businessUnit: string;
 	cdn: string;
-	city?: string | null;
-	country?: string | null;
-	deliveryservice: string;
+	city: string;
+	country: string;
 	hostname: string;
 	/**
 	 * The XMLID of the Delivery Service for which an SSL Key/Certificate pair
 	 * will be generated.
 	 */
 	key: string;
-	organization?: string | null;
-	state?: string | null;
+	organization: string;
+	state: string;
 	version: string;
 }
 
