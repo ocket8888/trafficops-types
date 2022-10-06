@@ -71,6 +71,18 @@ export interface RequestFederationResolver {
 
 /**
  * Represents a Federation Resolver as Traffic Ops presents it in
+ * response to a Federation Resolver creation request.
+ */
+export interface RequestFederationResolverResponse {
+	readonly id: number;
+	ipAddress: string;
+	readonly lastUpdated: Date;
+	type: string;
+	typeId: number;
+}
+
+/**
+ * Represents a Federation Resolver as Traffic Ops presents it in
  * responses.
  */
 export interface ResponseFederationResolver {
@@ -83,7 +95,7 @@ export interface ResponseFederationResolver {
 /**
  * Represents a Federation Resolver in an arbitrary context.
  */
-export type FederationResolver = RequestFederationResolver | ResponseFederationResolver;
+export type FederationResolver = RequestFederationResolver | RequestFederationResolverResponse | ResponseFederationResolver;
 
 /**
  * A set of Federation Resolver Mapping sets associated with specific address
