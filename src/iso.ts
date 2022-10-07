@@ -25,7 +25,7 @@ interface ISOFields {
 	interfaceName?: string | null;
 	ip6Address?: string | null;
 	ip6Gateway?: string | null;
-	osVersionsDir: string;
+	osVersionDir: string;
 	rootPass: string;
 }
 
