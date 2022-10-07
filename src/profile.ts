@@ -280,6 +280,17 @@ export interface ProfileImport {
 }
 
 /**
+ * Represents the response from Traffic Ops to a Profile Import request.
+ */
+export interface ProfileImportResponse {
+	cdn: string;
+	name: string;
+	readonly id: number;
+	type: ProfileType;
+	description: string;
+}
+
+/**
  * An exported Profile is enough information to reconstruct the Profile at a
  * later time and/or in a different ATC system using the `/profiles/import` API
  * endpoint.
