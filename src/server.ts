@@ -384,6 +384,18 @@ export interface Servercheck {
 }
 
 /**
+ * Represents a request to add a result to the table of "checks".
+ */
+export interface ServercheckUploadRequest {
+	// eslint-disable-next-line @typescript-eslint/naming-convention
+	host_name: string;
+	id: number;
+	// eslint-disable-next-line @typescript-eslint/naming-convention
+	servercheck_short_name: string;
+	value: string | number;
+}
+
+/**
  * Builds a true Map from the Servercheck's "checks" property.
  *
  * @param srv The Servercheck to convert.
