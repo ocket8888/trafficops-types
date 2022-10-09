@@ -460,6 +460,7 @@ export interface ResponseServercheckExtension {
 	/* eslint-disable @typescript-eslint/naming-convention */
 	additional_config_json: string | null;
 	description: string | null;
+	readonly id: number;
 	info_url: string;
 	isactive: 0 | 1;
 	name: string;
