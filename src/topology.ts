@@ -17,15 +17,33 @@
  */
 
 /**
+ * A single node in a Topology, as it appears in requests.
+ */
+export interface RequestTopologyNode {
+	cachegroup: string;
+	parents?: [number, number] | [number] | [] | null;
+}
+
+/**
+ * A singlenode in a Topology, as it appears in responses.
+ */
+export interface ResponseTopologyNode {
+	cachegroup: string;
+	parents: [number, number] | [number] | null;
+}
+
+/**
+ * A generic Topology node, in the context of either a request or response.
+ */
+export type TopologyNode = RequestTopologyNode | ResponseTopologyNode;
+
+/**
  * Represents a Topology as Traffic Ops requires it in requests to its API.
  */
 export interface RequestTopology {
 	description?: string | null;
 	name: string;
-	nodes: Array<{
-		cachegroup: string;
-		parents?: Array<number> | null;
-	}>;
+	nodes: Array<RequestTopologyNode>;
 }
 
 /**
@@ -36,10 +54,7 @@ export interface RequestTopologyResponse {
 	description: string;
 	readonly lastUpdated: Date;
 	name: string;
-	nodes: Array<{
-		cachegroup: string;
-		parents: Array<number> | null;
-	}>;
+	nodes: Array<ResponseTopologyNode>;
 	/**
 	 * @deprecated This field is included erroneously and will be removed in the
 	 * future.
@@ -56,10 +71,7 @@ export interface ResponseTopology {
 	description: string;
 	readonly lastUpdated: Date;
 	name: string;
-	nodes: Array<{
-		cachegroup: string;
-		parents: Array<number>;
-	}>;
+	nodes: Array<ResponseTopologyNode>;
 }
 
 /**
