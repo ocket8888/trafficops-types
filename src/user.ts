@@ -225,7 +225,7 @@ export interface RequestCurrentUser {
 	 * @deprecated This serves no purpose and is subject to removal in the
 	 * future.
 	 */
-	gid?: string | null;
+	gid?: number | null;
 	localUser?: boolean | null;
 	newUser?: boolean | null;
 	phoneNumber?: string | null;
@@ -249,7 +249,7 @@ export interface RequestCurrentUser {
 	 * @deprecated This serves no purpose and is subject to removal in the
 	 * future.
 	 */
-	uid?: string | null;
+	uid?: number | null;
 	/**
 	 * Unlike in virtually every other context, this is allowed to be `null` or
 	 * undefined. In that case, it has the meaning "leave this unchanged" rather
